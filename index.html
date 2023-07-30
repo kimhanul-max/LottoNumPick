@@ -98,7 +98,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <script>
+</head>
+
+<body>
+    <h1 alt="로또 번호 추천">로또 번호 추천</h1>
+    <label for="excludeNumbers">제외할 숫자 (쉼표로 구분):</label>
+    <input type="text" id="excludeNumbers" placeholder="예: 5, 10, 15">
+    <p>
+        <button onclick="generateLottoNumbers()" alt="로또 번호 추천 받기">번호 추천 받기</button>
+        <i class="bi bi-clipboard" onclick="copyLottoNumbers()" alt="로또 번호 복사">복사</i>
+    </p>
+    <ol id="lottoNumbers" alt="추천된 로또 번호"></ol>
+    <script async>
         function generateLottoNumbers() {
             const lottoNumbersContainer = document.querySelector("#lottoNumbers");
             const excludeInput = document.querySelector("#excludeNumbers");
@@ -169,17 +180,6 @@
             }
         }
     </script>
-</head>
-
-<body>
-    <h1 alt="로또 번호 추천">로또 번호 추천</h1>
-    <label for="excludeNumbers">제외할 숫자 (쉼표로 구분):</label>
-    <input type="text" id="excludeNumbers" placeholder="예: 5, 10, 15">
-    <p>
-        <button onclick="generateLottoNumbers()" alt="로또 번호 추천 받기">번호 추천 받기</button>
-        <i class="bi bi-clipboard" onclick="copyLottoNumbers()" alt="로또 번호 복사">복사</i>
-    </p>
-    <ol id="lottoNumbers" alt="추천된 로또 번호"></ol>
 </body>
 
 </html>
