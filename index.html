@@ -14,6 +14,7 @@
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
+            font-display: swap;
             text-align: center;
             margin: 20px;
         }
@@ -139,7 +140,9 @@
                 return `<span class="green">${number}</span>`;
             });
 
-            lottoNumbersContainer.innerHTML += "<li>" + coloredNumbers.join("") + "</li>";
+            const listItem = document.createElement("li");
+            listItem.innerHTML = coloredNumbers.join("");
+            lottoNumbersContainer.appendChild(listItem);
         }
 
         function copyLottoNumbers() {
