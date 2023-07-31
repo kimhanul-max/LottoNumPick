@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="로또 번호 추천 사이트로, 행운의 번호를 무작위로 생성하여 제공합니다. 추천 번호로 로또에 도전해보세요!">
-    <meta name="keywords" content="로또 번호 추천, 로또 번호 생성, 로또 번호 추출">
+    <meta name="description" content="로또번호 추천 사이트로, 행운의 번호를 무작위로 생성하여 제공합니다. 추천 번호로 로또에 도전해보세요!">
+    <meta name="keywords" content="로또번호 추천, 로또번호 생성기, 로또번호 추출기">
     
-    <meta property="og:title" content="로또 번호 추천 - 행운의 번호 무작위 생성">
-    <meta property="og:description" content="로또 번호 추천 사이트로, 행운의 번호를 무작위로 생성하여 제공합니다. 추천 번호로 로또에 도전해보세요!">
+    <meta property="og:title" content="로또번호 추천 - 행운의 번호 무작위 생성">
+    <meta property="og:description" content="로또번호 추천 사이트로, 버튼을 누르면 행운의 번호를 무작위로 생성하여 제공합니다. 추천 번호로 로또에 도전해보세요!">
     <meta property="og:image" content="https://lottonumpick.netlify.app/favicon.png">
     <meta property="og:url" content="https://lottonumpick.netlify.app/">
 
     <meta name="twitter:card" content="https://lottonumpick.netlify.app/favicon.png">
-    <meta name="twitter:title" content="로또 번호 추천 - 행운의 번호 무작위 생성">
-    <meta name="twitter:description" content="로또 번호 추천 사이트로, 행운의 번호를 무작위로 생성하여 제공합니다. 추천 번호로 로또에 도전해보세요!">
+    <meta name="twitter:title" content="로또번호 추천 - 행운의 번호 무작위 생성">
+    <meta name="twitter:description" content="로또번호 추천 사이트로, 버튼을 누르면 행운의 번호를 무작위로 생성하여 제공합니다. 추천 번호로 로또에 도전해보세요!">
     <meta name="twitter:image" content="https://lottonumpick.netlify.app/favicon.png">
 
-    <title>로또 번호 추천 - 행운의 번호 무작위 생성</title>
+    <title>로또번호 추천 - 행운의 번호 무작위 생성</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="favicon.png">
     <style>
@@ -54,13 +54,11 @@
         }
 
         #lottoNumbers {
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
             font-size: 25px;
         }
-
-        li {
-            margin-left: 25%;
-        }
-
         /* Custom styles for different ranges of lotto numbers */
         #lottoNumbers span {
             text-align: center;
@@ -113,14 +111,14 @@
 </head>
 
 <body>
-    <h1 alt="로또 번호 추천">로또 번호 추천</h1>
+    <h1 alt="로또번호 추천">로또번호 추천</h1>
     <label for="excludeNumbers">제외할 숫자 (쉼표로 구분):</label>
     <input type="text" id="excludeNumbers" placeholder="예: 5, 10, 15">
     <p>
-        <button onclick="generateLottoNumbers()" alt="로또 번호 추천 받기">번호 추천 받기</button>
-        <i class="bi bi-clipboard" onclick="copyLottoNumbers()" alt="로또 번호 복사">복사</i>
+        <button onclick="generateLottoNumbers()" alt="로또번호 추천 받기">번호 추천 받기</button>
+        <i class="bi bi-clipboard" onclick="copyLottoNumbers()" alt="로또번호 복사">복사</i>
     </p>
-    <ol id="lottoNumbers" alt="추천된 로또 번호"></ol>
+    <ol id="lottoNumbers" alt="추천된 로또번호"></ol>
     <script async>
         function generateLottoNumbers() {
             const lottoNumbersContainer = document.querySelector("#lottoNumbers");
@@ -184,7 +182,7 @@
 
             try {
                 document.execCommand("copy");
-                alert("로또 번호가 성공적으로 복사되었습니다!");
+                alert("로또번호가 성공적으로 복사되었습니다!");
             } catch (err) {
                 alert("복사를 실패하였습니다. 수동으로 복사해주세요.");
             } finally {
