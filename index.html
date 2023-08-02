@@ -1,196 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="로또번호 추천 사이트로, 행운의 번호를 무작위로 생성하여 제공합니다. 추천 번호로 로또에 도전해보세요!">
-    <meta name="keywords" content="로또번호 추천, 로또번호 생성기, 로또번호 추출기">
-    
-    <meta property="og:title" content="로또번호 추천 - 행운의 번호 무작위 생성">
+    <meta name="keywords" content="로또번호 추천, 로또번호 생성기, 로또번호 추출기, 로또번호">
+
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="로또번호 추천 - 행운의 번호 무작위 생성 | 로또번호 생성기">
     <meta property="og:description" content="로또번호 추천 사이트로, 버튼을 누르면 행운의 번호를 무작위로 생성하여 제공합니다. 추천 번호로 로또에 도전해보세요!">
     <meta property="og:image" content="https://lottonumpick.netlify.app/favicon.png">
     <meta property="og:url" content="https://lottonumpick.netlify.app/">
 
-    <meta name="twitter:card" content="https://lottonumpick.netlify.app/favicon.png">
-    <meta name="twitter:title" content="로또번호 추천 - 행운의 번호 무작위 생성">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="로또번호 추천 - 행운의 번호 무작위 생성 | 로또번호 생성기">
     <meta name="twitter:description" content="로또번호 추천 사이트로, 버튼을 누르면 행운의 번호를 무작위로 생성하여 제공합니다. 추천 번호로 로또에 도전해보세요!">
     <meta name="twitter:image" content="https://lottonumpick.netlify.app/favicon.png">
 
-    <title>로또번호 추천 - 행운의 번호 무작위 생성</title>
+    <title>로또번호 추천 - 행운의 번호 무작위 생성 | 로또번호 생성기</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="favicon.png">
-    <style>
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            font-display: swap;
-            text-align: center;
-            margin: 20px;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ebebeb;
-        }
-
-        button {
-            margin: 10px;
-            font-size:35px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .bi-clipboard {
-            font-display: swap;
-            font-size: 28px;
-            font-weight: 500;
-            font-style: normal;
-        }
-
-        #lottoNumbers {
-            padding-right: 40px;
-            display: table;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 25px;
-        }
-        /* Custom styles for different ranges of lotto numbers */
-        #lottoNumbers span {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
-            width: 40px;
-            height: 40px;
-            font-size: 20px;
-            font-weight: bold;
-            border-radius: 40px;
-            margin-left: 5px;
-            user-select: none;
-            margin: 10px;
-        }
-
-        .yellow {
-            background-color: #ffc107;
-            color: white;
-        }
-
-        .blue {
-            background-color: #4361ee;
-            color: white;
-        }
-
-        .red {
-            background-color: #F7253E;
-            color: white;
-        }
-
-        .gray {
-            background-color: #2f3037;
-            color: white;
-        }
-
-        .green {
-            background-color: #38b000;
-            color: white;
-        }
-
-        p {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: nowrap;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
-    <h1 alt="로또번호 추천">로또번호 추천</h1>
+    <header>
+        <h1>로또번호 추천</h1>
+    </header>
     <label for="excludeNumbers">제외할 숫자 (쉼표로 구분):</label>
     <input type="text" id="excludeNumbers" placeholder="예: 5, 10, 15">
     <p>
-        <button onclick="generateLottoNumbers()" alt="로또번호 추천 받기">번호 추천 받기</button>
-        <i class="bi bi-clipboard" onclick="copyLottoNumbers()" alt="로또번호 복사">복사</i>
+        <button onclick="generateLottoNumbers()">번호 추천 받기</button>
+        <i class="bi bi-clipboard" onclick="copyLottoNumbers()">복사</i>
     </p>
-    <ol id="lottoNumbers" alt="추천된 로또번호"></ol>
-    <script async>
-        function generateLottoNumbers() {
-            const lottoNumbersContainer = document.querySelector("#lottoNumbers");
-            const excludeInput = document.querySelector("#excludeNumbers");
-
-            // Parse the exclude numbers from the input field
-            const excludeNumbers = excludeInput.value.split(",").map(num => parseInt(num.trim()));
-
-            // Create an array of numbers from 1 to 45, excluding the excluded numbers
-            let numbers = Array.from({ length: 45 }, (_, i) => i + 1).filter(num => !excludeNumbers.includes(num));
-
-            if (numbers.length < 6) {
-                alert("포함할 숫자를 더 추가해주세요.");
-                return;
-            }
-
-            const selectedNumbers = [];
-            for (let i = 0; i < 6; i++) {
-                const randomIndex = Math.floor(Math.random() * numbers.length);
-                const selectedNumber = numbers.splice(randomIndex, 1)[0];
-                selectedNumbers.push(selectedNumber);
-            }
-
-            selectedNumbers.sort((a, b) => a - b);
-
-            const coloredNumbers = selectedNumbers.map(number => {
-                if (number <= 10) return `<span class="yellow">${number}</span>`;
-                if (number <= 20) return `<span class="blue">${number}</span>`;
-                if (number <= 30) return `<span class="red">${number}</span>`;
-                if (number <= 40) return `<span class="gray">${number}</span>`;
-                return `<span class="green">${number}</span>`;
-            });
-
-            const listItem = document.createElement("li");
-            listItem.innerHTML = coloredNumbers.join("");
-            lottoNumbersContainer.appendChild(listItem);
-        }
-
-        function copyLottoNumbers() {
-            const lottoNumbersContainer = document.querySelector("#lottoNumbers");
-            const lottoNumbers = Array.from(lottoNumbersContainer.querySelectorAll("span"));
-            const lottoNumbersText = lottoNumbers.map(span => span.textContent).join(" ");
-
-            // Split the numbers into sets of 5 numbers per line
-            const numbersPerLine = 6;
-            let formattedNumbers = "";
-            for (let i = 0; i < lottoNumbers.length; i += numbersPerLine) {
-                const numberSet = lottoNumbers.slice(i, i + numbersPerLine);
-                formattedNumbers += numberSet.map(span => span.textContent).join(" ") + "\n";
-            }
-
-            const tempTextArea = document.createElement("textarea");
-            tempTextArea.value = formattedNumbers;
-
-            // Hide the temporary textarea element from view.
-            tempTextArea.style.position = "fixed";
-            tempTextArea.style.opacity = 0;
-
-            document.body.appendChild(tempTextArea);
-            tempTextArea.select();
-
-            try {
-                document.execCommand("copy");
-                alert("로또번호가 성공적으로 복사되었습니다!");
-            } catch (err) {
-                alert("복사를 실패하였습니다. 수동으로 복사해주세요.");
-            } finally {
-                document.body.removeChild(tempTextArea);
-            }
-        }
+    <ol id="lottoNumbers"></ol>
+    <script src="code.js" async>
     </script>
 </body>
 

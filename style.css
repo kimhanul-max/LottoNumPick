@@ -1,0 +1,85 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-display: swap;
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+button {
+    margin: 10px;
+    font-size:35px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.bi-clipboard {
+    font-display: swap;
+    font-size: 28px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#lottoNumbers {
+    padding-right: 40px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+}
+/* Custom styles for different ranges of lotto numbers */
+#lottoNumbers span {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 40px;
+    margin-left: 5px;
+    user-select: none;
+    margin: 10px;
+}
+
+.yellow {
+    background-color: #ffc107;
+    color: white;
+}
+
+.blue {
+    background-color: #4361ee;
+    color: white;
+}
+
+.red {
+    background-color: #F7253E;
+    color: white;
+}
+
+.gray {
+    background-color: #2f3037;
+    color: white;
+}
+
+.green {
+    background-color: #38b000;
+    color: white;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
