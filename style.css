@@ -1,9 +1,7 @@
 body {
     font-family: 'Noto Sans KR', sans-serif;
-    font-display: swap;
     text-align: center;
     margin: 20px;
-    font-display: swap;
 }
 h1 {
     margin-bottom: 20px;
@@ -24,11 +22,9 @@ button {
 }
 
 .bi-clipboard {
-    font-display: swap;
     font-size: 28px;
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
 }
 
 #lottoNumbers {
