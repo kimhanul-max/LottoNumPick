@@ -42,12 +42,11 @@
         <h3>이 사이트는 로또 번호 생성 및 추천을 위한 편리한 도구입니다. 이 사이트에서 간단히 제외할 숫자를 입력하고 "번호 추천 받기" 버튼을 클릭함으로써 무작위의 로또 번호를 생성하고 추천받을 수 있습니다. 로또 번호 선택에 고민이라면 이 사이트를 활용하여 로또 당첨에 도전해보세요!</h3>
     </p>
     <p>
-        <button onclick="generateLottoNumbers()">번호 추천 받기</button>
-        <i class="bi bi-clipboard" onclick="copyLottoNumbers()" alt="전체 번호 복사">복사</i>
+        <button id="generateButton">번호 추천 받기</button>
+        <i id="copyButton" class="bi bi-clipboard" alt="전체 번호 복사">복사</i>
     </p>
     <ol id="lottoNumbers"></ol>
-    <script src="code.js" async>
-    </script>
+    <script src="code.js" async></script>
 </body>
 
 </html>

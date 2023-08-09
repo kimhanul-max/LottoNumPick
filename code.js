@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const generateButton = document.getElementById("generateButton");
+    const copyButton = document.getElementById("copyButton");
+
+    generateButton.addEventListener("click", generateLottoNumbers);
+    copyButton.addEventListener("click", copyLottoNumbers);
+});
+
 function generateLottoNumbers() {
     const lottoNumbersContainer = document.querySelector("#lottoNumbers");
     const excludeInput = document.querySelector("#excludeNumbers");

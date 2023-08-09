@@ -82,3 +82,9 @@ p {
     align-items: center;
     flex-wrap: nowrap;
 }
+#generateButton {
+    margin-right: 10px;
+}
+button {
+    font-size: 24px;
+}
